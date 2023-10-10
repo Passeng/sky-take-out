@@ -8,6 +8,6 @@ sky:
     password: root
   alioss:
     endpoint: oss-cn-hangzhou.aliyuncs.com
-    access-key-id: LTAI5tEbDt4Tzc6DFj6rZSFe
-    access-key-secret: Nw1wIy1g21LFkaZMl4XtnSjG01JHxp
+    access-key-id:
+    access-key-secret:
     bucket-name: sky-dish-images
