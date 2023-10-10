@@ -26,6 +26,7 @@ public interface EmployeeService {
 
 	/**
 	 * 分页查询
+	 *
 	 * @param employeePageQueryDTO
 	 * @return
 	 */
@@ -33,8 +34,24 @@ public interface EmployeeService {
 
 	/**
 	 * 员工账号启用禁用
+	 *
 	 * @param status
 	 * @param id
 	 */
 	void statusStartOrStop(Integer status, Long id);
+
+	/**
+	 * 修改员工信息
+	 *
+	 * @param employeeDTO
+	 */
+	void editEmployeeInfo(EmployeeDTO employeeDTO);
+
+	/**
+	 * 根据id查询员工信息
+	 *
+	 * @param id
+	 * @return
+	 */
+	Employee getById(Long id);
 }
