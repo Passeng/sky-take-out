@@ -30,4 +30,11 @@ public interface EmployeeService {
 	 * @return
 	 */
 	PageResult queryEmployeePage(EmployeePageQueryDTO employeePageQueryDTO);
+
+	/**
+	 * 员工账号启用禁用
+	 * @param status
+	 * @param id
+	 */
+	void statusStartOrStop(Integer status, Long id);
 }
