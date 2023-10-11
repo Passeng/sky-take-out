@@ -10,6 +10,11 @@
                 #{createUser}, #{updateUser})
     </insert>
 
+    <delete id="deleteDishBatch">
+        delete from dish where id in
+        <foreach collection="list" separator="," open="(" close=")" item="id">#{id}</foreach>
+    </delete>
+
     <select id="queryDishPage" resultType="com.sky.vo.DishVO">
         select d.*,c.name category_name from dish d left join category c on d.category_id = c.id
         <where>
@@ -19,4 +24,10 @@
         </where>
         order by create_time desc
     </select>
+
+    <select id="countEnablesByIds" resultType="java.lang.Integer">
+        select count(*) from dish where status = 1 and id in
+        <foreach collection="list" separator="," open="(" close=")" item="id">#{id}</foreach>
+    </select>
+
 </mapper>
