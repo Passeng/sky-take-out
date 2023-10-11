@@ -44,4 +44,11 @@ public interface DishService {
      * @return
      */
     DishVO queryByid(Long id);
+
+    /**
+     * 菜品启售停售
+     * @param id
+     * @param status
+     */
+    void dishStartOrStop(Long id, Integer status);
 }
