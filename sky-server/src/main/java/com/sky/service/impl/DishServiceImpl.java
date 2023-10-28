@@ -84,6 +84,7 @@ public class DishServiceImpl implements DishService {
 	 *
 	 * @param ids
 	 */
+	@Transactional
 	@Override
 	public void deleteDishBatch(List<Long> ids) {
 		//判断被删除的菜品中是否为起售状态 有则不能删除

@@ -31,13 +31,13 @@
     </delete>
 
     <select id="queryDishPage" resultType="com.sky.vo.DishVO">
-        select d.*,c.name category_name from dish d left join category c on d.category_id = c.id
+        select d.*,c.name category_name from dish d left outer join category c on d.category_id = c.id
         <where>
             <if test="name != null and name != ''">and d.name like concat('%',#{name},'%')</if>
             <if test="categoryId != null">and d.category_id = #{categoryId}</if>
             <if test="status != null">and d.status = #{status}</if>
         </where>
-        order by create_time desc
+        order by d.create_time desc
     </select>
 
     <select id="countEnablesByIds" resultType="java.lang.Integer">
