@@ -70,4 +70,12 @@ public interface DishMapper {
      */
     @Select("select * from dish where id = #{id}")
     DishVO queryById(Long id);
+
+    /**
+     * 根据查询条件查询List
+     *
+     * @param dish
+     * @return
+     */
+    List<Dish> list(Dish dish);
 }
