@@ -81,6 +81,14 @@ public interface DishMapper {
     List<Dish> getBySetmealId(Long setmealId);
 
     /**
+     * 动态条件查询菜品
+     *
+     * @param dish
+     * @return
+     */
+    List<Dish> getBycategoryId(Dish dish);
+
+    /**
      * 根据查询条件查询List
      *
      * @param dish
