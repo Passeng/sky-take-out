@@ -1,32 +1,35 @@
 package com.sky.mapper;
 
+import com.sky.dto.GoodsSalesDTO;
 import com.sky.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 
 @Mapper
 public interface UserMapper {
 
-    /**
-     * 根据openid查询用户
-     *
-     * @param openid
-     * @return
-     */
-    @Select("select * from user where openid = #{openid}")
-    User getUserByOpenid(String openid);
+	/**
+	 * 根据openid查询用户
+	 *
+	 * @param openid
+	 * @return
+	 */
+	@Select("select * from user where openid = #{openid}")
+	User getUserByOpenid(String openid);
 
-    /**
-     * 插入用户数据
-     *
-     * @param user
-     */
-    void insert(User user);
+	/**
+	 * 插入用户数据
+	 *
+	 * @param user
+	 */
+	void insert(User user);
 
-    @Select("select * from user where id = #{userId}")
-    User getById(Long userId);
+	@Select("select * from user where id = #{userId}")
+	User getById(Long userId);
 
 	Integer countByMap(Map map);
 }
